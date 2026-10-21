@@ -17,6 +17,7 @@ public class SingleEmployee {
     }
 
     public void greetMsg(){
+
         System.out.println("greemsg Fun called");
     }
 
