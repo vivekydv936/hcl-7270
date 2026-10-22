@@ -9,5 +9,7 @@ public interface EmpRepo {
        String empData();
         public int add(int a,int b);
 
+        public int greater(int a ,int b);
+
 
 }

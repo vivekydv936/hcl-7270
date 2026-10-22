@@ -19,10 +19,10 @@ public class EmployeeController {
         return " welcome to hrms App";
     }
 
-    @GetMapping("/add")
-    public int sum(){
+    @GetMapping("/add/{num1}/{num2}")
+    public int sum(@PathVariable int num1,@PathVariable int num2){
         System.out.println("inside/add controller point");
-       int result= demoEmployee.add();
+       int result= demoEmployee.add(num1,num2);
 
         return result;
     }
@@ -31,6 +31,13 @@ public class EmployeeController {
     public double getSquare(){
         System.out.println("enterred in getSquare fun");
        return demoEmployee.squareRoot();
+    }
+
+    @GetMapping("/gtn/{num1}/{num2}")
+    public String checkgreater(@PathVariable int num1, @PathVariable int num2){
+       int max = demoEmployee.greater(num1,num2);
+        return "greater no is"+ max;
+
     }
 
 }
