@@ -18,9 +18,12 @@ import java.util.List;
 
 public class StudentController {
 
+
+
    private StudentService studentService;
 
     public StudentController(StudentService studentService) {
+
         this.studentService = studentService;
     }
 
@@ -39,8 +42,8 @@ public class StudentController {
 
     // read one student
 
-        @GetMapping("/get/{id}")
-    public ResponseEntity<Student> getSingleStudent(@PathVariable Long id){
+        @GetMapping("/get")
+    public ResponseEntity<Student> getSingleStudent(@RequestParam Long id){
         Student studentRes = studentService.getSingleStudent(id);
         if(studentRes==null){
 //            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -66,8 +69,8 @@ public class StudentController {
 
 // read one student
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student studentreq ){
+    @PutMapping("/update")
+    public ResponseEntity<Student> updateStudent(@RequestParam Long id, @RequestBody Student studentreq ){
         Student studentRes = studentService.UpdateStudent(id,studentreq);
         if(studentRes==null){
             return ResponseEntity.notFound().build();
@@ -78,14 +81,23 @@ public class StudentController {
 
     // delete student
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable Long id ){
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteStudent(@RequestParam Long id ){
         Boolean isdeleted =studentService.deleteStudent(id);
         if(!isdeleted){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok("Student deleted Successfully");
 
+    }
+
+    @PatchMapping("/soft-delete")
+    public ResponseEntity<String> softDelete(@RequestParam Long id){
+        Boolean isDeleted =studentService.deletesoftly(id);
+        if(!isDeleted){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok("record softly deleted");
     }
 
 }

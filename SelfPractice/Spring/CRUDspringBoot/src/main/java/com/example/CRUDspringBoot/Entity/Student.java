@@ -1,12 +1,15 @@
 package com.example.CRUDspringBoot.Entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity    // entity not maintained by ioc ,--. maintained by JPA
 
 public class Student {
     @Id // identify as primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private  String name;
