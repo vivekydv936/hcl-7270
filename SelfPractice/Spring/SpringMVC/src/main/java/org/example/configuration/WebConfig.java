@@ -9,4 +9,5 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = "org.example")
 @EnableWebMvc
 public class WebConfig {
+
 }

@@ -30,8 +30,8 @@ public class Main {
 
 
         // Dispatch server
-        DispatcherServlet dispatcherServlet =new DispatcherServlet(springcontext);
-        tomcat.addServlet( ctx ,"dispatcherServlet",dispatcherServlet);
+        DispatcherServlet dispatcherServlet =new DispatcherServlet(springcontext);  // passing Spring context to dispatcher servlet
+        tomcat.addServlet( ctx ,"dispatcherServlet",dispatcherServlet); // adding servlet to tomcat
         ctx.addServletMappingDecoded("/","dispatcherServlet");
         tomcat.start();
         System.out.println("tomcat started ");
