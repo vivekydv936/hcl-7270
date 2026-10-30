@@ -8,7 +8,7 @@ public class JwtdemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JwtdemoApplication.class, args);
-
+		System.out.println("Welcome to JWT Demo Application");
 	}
 
 }

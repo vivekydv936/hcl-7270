@@ -61,3 +61,20 @@ desktop.ini
 *.tmp
 *.swp
 *~
+
+
+# for jwt
+#backend
+backend/target
+.idea
+*.iml
+
+#frontend
+frontend/node_modules
+frontend/dist
+
+# env files
+.env
+
+node_modules/
+**/node_modules/
