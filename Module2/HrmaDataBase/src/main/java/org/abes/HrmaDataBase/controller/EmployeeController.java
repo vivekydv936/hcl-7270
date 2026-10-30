@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin("http://localhost:5173/")
+@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/v1/user")
 public class EmployeeController {
 
     @Autowired
@@ -15,12 +16,13 @@ public class EmployeeController {
 
     @GetMapping("/")
     public  String msg(){
+
         return "welcome to appppp";
     }
 
-    @GetMapping("/addemp")
-    public String addnewEmployee(){
-        return employeeService.createnewEmployee();
+    @PostMapping("/addemp")
+    public String addnewEmployee(@RequestBody Employee newEmp){
+        return employeeService.createnewEmployee(newEmp);
     }
 
     @GetMapping("/findbyid/{empid}")

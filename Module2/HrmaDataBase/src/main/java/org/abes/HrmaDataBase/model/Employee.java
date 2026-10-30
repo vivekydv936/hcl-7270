@@ -7,47 +7,49 @@ import jakarta.persistence.Id;
 public class Employee {
 
     @Id
-    private long emp_id;
-    private String emp_name;
-    private String stack;
+    private long employeeId;
+    private String name;
+    private String email;
     private String designation;
-
+    private String techStack;
+    private String password;
 
     // compulsary for Entity
-    public Employee(){
-
+    public Employee() {
     }
 
-    public Employee(long emp_id, String emp_name, String stack, String designation) {
-        this.emp_id = emp_id;
-        this.emp_name = emp_name;
-        this.stack = stack;
+    public Employee(long employeeId, String name, String email, String designation,
+                    String techStack, String password) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.email = email;
         this.designation = designation;
+        this.techStack = techStack;
+        this.password = password;
     }
 
-
-    public long getEmp_id() {
-        return emp_id;
+    public long getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmp_id(long emp_id) {
-        this.emp_id = emp_id;
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getEmp_name() {
-        return emp_name;
+    public String getName() {
+        return name;
     }
 
-    public void setEmp_name(String emp_name) {
-        this.emp_name = emp_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getStack() {
-        return stack;
+    public String getEmail() {
+        return email;
     }
 
-    public void setStack(String stack) {
-        this.stack = stack;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getDesignation() {
@@ -58,5 +60,19 @@ public class Employee {
         this.designation = designation;
     }
 
+    public String getTechStack() {
+        return techStack;
+    }
 
+    public void setTechStack(String techStack) {
+        this.techStack = techStack;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

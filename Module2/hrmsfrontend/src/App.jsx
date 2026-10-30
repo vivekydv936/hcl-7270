@@ -1,36 +1,28 @@
 import './App.css'
+import Home from './component/Home'
+import Login from './component/Login'
+import Registrstion from './component/Registrstion'
 import SampleCode from './component/SampleCode'
 import UseFetchApi from './component/UseFetchApi'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+
+
 
 function App() {
-  const employee = [
-    {
-    ename: 'rahul',
-    empid: '1208',
-  },
-  {
-    ename: 'aman',
-    empid: '1212',
-  },
-  {
-    ename: 'saurav',
-    empid: '55',
-  }
-]
+
 
   return (
     <div>
-      {/* <h2>welcome to hrms system</h2>
-      <div>
-        {employee.map((ele) => (
-          <SampleCode key={ele.empid} empdata={ele} />
-        ))}
+     <BrowserRouter>
+     <Routes>
+     <Route path ='/'element={<Home/>}>    </Route>
+     <Route path ='/login'element={<Login/>}>    </Route>
+     <Route path ='/register'element={<Registrstion/>}>    </Route>
 
-      </div> */}
+    </Routes>
+     </BrowserRouter>
 
-         <SampleCode/>
-         <UseFetchApi/>
-      
+
 
     </div>
   )

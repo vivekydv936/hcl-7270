@@ -1,0 +1,81 @@
+.registration-page {
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  background: #f4f6f8;
+}
+
+.registration-form {
+  width: min(100%, 440px);
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  border: 1px solid #e1e5e9;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+  box-sizing: border-box;
+}
+
+.registration-form h1 {
+  margin: 0;
+  color: #222;
+  font-size: 24px;
+}
+
+.registration-form__description {
+  margin: 0 0 8px;
+  color: #626b75;
+}
+
+.registration-form label {
+  margin-top: 6px;
+  color: #303943;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.registration-form input,
+.registration-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd2d9;
+  border-radius: 5px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.registration-form input:focus,
+.registration-form textarea:focus {
+  border-color: #2563eb;
+  outline: 2px solid rgb(37 99 235 / 20%);
+}
+
+.registration-form textarea {
+  resize: vertical;
+}
+
+.registration-form button {
+  margin-top: 10px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: #2563eb;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.registration-form button:hover {
+  background: #1d4ed8;
+}
+
+.registration-form__message {
+  min-height: 20px;
+  margin: 0;
+  color: #485465;
+  font-size: 14px;
+}

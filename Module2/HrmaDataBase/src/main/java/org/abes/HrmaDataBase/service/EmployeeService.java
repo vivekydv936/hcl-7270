@@ -10,14 +10,10 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public String createnewEmployee(){
-        Employee emp1= new Employee(200L, "Mishra", "javaStack", "sde");
-        Employee emp2= new Employee(199L, "Yashu", "javaStack", "quality analysis");
-        Employee emp3= new Employee(198L, "rahul", "MERN", "tester");
+    public String createnewEmployee(Employee newEmp){
 
-        employeeRepository.save(emp1);
-        employeeRepository.save(emp2);
-        employeeRepository.save(emp3);
+        employeeRepository.save(newEmp);
+
         return "Employees are added successfully";
     }
 
@@ -32,9 +28,11 @@ public class EmployeeService {
             return null;
         }
 
-        employee.setEmp_name(updatedEmployee.getEmp_name());
-        employee.setStack(updatedEmployee.getStack());
+        employee.setName(updatedEmployee.getName());
+        employee.setEmail(updatedEmployee.getEmail());
         employee.setDesignation(updatedEmployee.getDesignation());
+        employee.setTechStack(updatedEmployee.getTechStack());
+        employee.setPassword(updatedEmployee.getPassword());
         return employeeRepository.save(employee);
     }
 
