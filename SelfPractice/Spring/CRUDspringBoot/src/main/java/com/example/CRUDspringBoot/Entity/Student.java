@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+
 @Entity    // entity not maintained by ioc ,--. maintained by JPA
 
 public class Student {
@@ -18,6 +20,28 @@ public class Student {
     private int rollNo;
     private  String subject;
     private Boolean isDeleted;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
     public Boolean isDeleted() {
         return isDeleted;

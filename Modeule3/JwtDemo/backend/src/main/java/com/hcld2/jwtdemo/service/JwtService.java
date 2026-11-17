@@ -1,4 +1,4 @@
-package com.hcld2.jwtdemo.security;
+package com.hcld2.jwtdemo.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -13,8 +13,8 @@ public class JwtService {
     private final Algorithm algorithm;
     private final JWTVerifier jwtVerifier;
     private final long expireMs;
-    public JwtService(@Value("${jwt.secret}") String secret,
-                      @Value("${jwt.expire-ms}") long expireMs) {
+    public JwtService(@Value("${app.jwt.secret}") String secret,
+                      @Value("${app.jwt.expiration-ms}") long expireMs) {
         this.algorithm = Algorithm.HMAC256(secret);
         this.jwtVerifier = JWT.require(algorithm).build();
         this.expireMs = expireMs;

@@ -4,7 +4,7 @@ import com.hcld2.jwtdemo.dto.AuthRequest;
 import com.hcld2.jwtdemo.dto.AuthResponse;
 import com.hcld2.jwtdemo.entity.User;
 import com.hcld2.jwtdemo.repository.UserRepository;
-import com.hcld2.jwtdemo.security.JwtService;
+import com.hcld2.jwtdemo.service.JwtService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,10 +1,10 @@
 package com.hcld2.jwtdemo.entity;
 
-import ch.qos.logback.core.net.SMTPAppenderBase;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+@Entity
 @Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor

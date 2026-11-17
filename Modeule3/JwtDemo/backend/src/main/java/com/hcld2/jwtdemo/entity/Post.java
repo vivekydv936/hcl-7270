@@ -1,12 +1,10 @@
 package com.hcld2.jwtdemo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+@Entity
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +18,9 @@ public class Post {
 
     private LocalDateTime createdAt= LocalDateTime.now();
 
+    protected Post() {
+    }
+
     public Post(Object title, Object content, String name) {
         this.title = (String) title;
         this.content = (String) content;
@@ -27,5 +28,12 @@ public class Post {
     }
 
 
+        public Object getTitle() {
+        return title;
+       
+    }
 
+    public Object getContent() {
+        return content;
+    }
 }
